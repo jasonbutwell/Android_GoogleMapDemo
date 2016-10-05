@@ -47,15 +47,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.addMarker(new MarkerOptions().position(new LatLng(27.175306,78.042144)).title("The Taj Mahal").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
-        mMap.addMarker(new MarkerOptions().position(portsmouth).title("Marker in Portsmouth"));
-        mMap.addMarker(new MarkerOptions().position(southsea).title("Marker in Southsea"));
-        mMap.addMarker(new MarkerOptions().position(southampton).title("Marker in Southampton"));
+        mMap.addMarker(new MarkerOptions().position(portsmouth).title("Marker in Portsmouth").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+        mMap.addMarker(new MarkerOptions().position(southsea).title("Marker in Southsea").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+        mMap.addMarker(new MarkerOptions().position(southampton).title("Marker in Southampton").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(southampton));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(8));
 
         // Sets the camera location based on a new Lat Long and sets the zoom level in one
         // This places a green marker near the Taj Mahal
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(27.175306,78.042144),15));
+
+        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(27.175306,78.042144),15));
+
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
     }
 }
